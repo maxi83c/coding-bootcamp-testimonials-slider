@@ -1,0 +1,333 @@
+:root{
+  --dark-blue: #202046;
+  --gray: #babacf;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  background-image: url(../images/pattern-curve.svg);
+  background-repeat: no-repeat;
+  background-size: 75.2% 72px;
+  background-position: left bottom;
+}
+
+.section{
+  width: 100%;
+  height: 667px;
+  padding-top: 54px;
+  position: relative;
+  background-image: url(../images/pattern-bg.svg), url(../images/pattern-quotes.svg);
+  background-repeat: no-repeat;
+  background-size: 327px 308px, 60px 50px, 75.2% 72px;
+  background-position: center 24px, center 364px, left bottom;
+}
+
+
+@media screen and (min-width: 768px){
+  body{
+    background-size: 42.1578vw 10.7639vw;
+  }
+  .section{
+    background-size: 48.472vw 45.694vw, 8.2639vw 6.875vw;
+    background-position: 46.65vw 3.5vw, 18.0556vw 14.8611vw;
+    padding-top: 0;
+    height: max(667px, 55.5555vw);
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .section{
+    height: max(800px, 100vh); 
+  }
+}
+
+@media screen and (min-width: 1440px){
+  body{
+    background-size:  609px 154px;
+  }
+  .section{
+    background-size: 697px 657px, 120px 100px;
+    background-position: 671px 50px, 260px 214px;
+    width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+.header, .photo{
+  width: 254px;
+  height: 253px;
+  position: relative;
+}
+
+.header{
+  margin: 0 auto;
+  box-shadow: 0 20px 20px -15px rgba(83, 83, 102, 0.3);
+}
+
+@media screen and (min-width: 768px){
+  .header{
+    position: absolute;
+    top: 7.8472vw;
+    right: 11.458vw;
+    box-shadow: 0 30px 30px -15px rgba(83, 83, 102, 0.3);
+  }
+  .header{
+    width: 37.5vw;
+    height: 37.5vw;
+    max-width: 540px;
+    max-height: 540px;
+  }
+  .photo{
+    width: 100%;
+    height: 100%;
+    max-width: 540px;
+    max-height: 540px;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .header{
+    top: 113px;
+    left: 735px;
+  }
+}
+
+.photo{
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.photo__img, .information__text, .name__text, .job__text{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s;
+}
+
+.photo__img:first-child, .information__text:first-child, 
+.photo--next > .photo__img:last-child, .information--next > .information__text:last-child{
+  transform: translateX(0);
+}
+
+.photo__img:last-child, .information__text:last-child{
+  transform: translateX(100%);
+}
+
+.photo--next > .photo__img:first-child, .information--next > .information__text:first-child{
+  transform: translateX(-100%);
+}
+
+.name__text:first-child, .job__text:first-child, 
+.name--next > .name__text:last-child, .job--next > .job__text:last-child{
+  transform: scaleX(1);
+}
+
+.name__text:last-child, .job__text:last-child, .name--next > .name__text:first-child, .job--next > .job__text:first-child{
+  transform: scaleX(0);
+}
+
+.button{
+  width: 80px;
+  height: 40px;
+  display: flex;
+  border-radius: 20px;
+  background-color: white;
+  overflow: hidden;
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 40px);
+  box-shadow: 0 10px 20px rgba(83, 83, 102, 0.3);
+}
+
+.button__prev, .button__next{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+
+@media screen and (min-width: 768px){
+  .button{
+    left: 62px;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .button{
+    width: 112px;
+    height: 56px;
+    bottom: -28px;
+    left: 62px;
+    border-radius: 28px;
+    box-shadow: 0 20px 30px rgba(83, 83, 102, 0.3);
+  }
+  .button__prev, .button__next{
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.information{
+  width: 82.67%;
+  max-width: 357px;
+  min-height: 145px;
+  position: relative;
+  overflow: hidden;
+  margin: 82px auto 0;
+}
+
+.information__text, .name__text, .job__text{
+  margin: 0;
+  text-align: center;
+}
+
+.information__text{
+  color: var(--dark-blue);
+  font-weight: 300;
+  font-size: 1.1rem;
+  letter-spacing: 0.019rem;
+  word-spacing: -0.03rem;
+  line-height: 1.364;
+} 
+
+@media screen and (min-width: 768px){
+  .information{
+    position: absolute;
+    top: 20vw;
+    left: 11.5278vw;
+    width: 44.4444vw;
+    max-width: 634px;
+    min-height: 300px;
+    margin: 0; 
+  }
+
+  .information__text{
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1400px){
+  .information{
+    top: 280px;
+    left: 165px;
+    height: 210px;
+  }
+  .information__text{
+    font-size: 2rem;
+    letter-spacing: 0;
+    word-spacing: 0.015rem;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .profile{
+    width: 60%;
+    justify-content: flex-start;
+    justify-items: start;
+    height: max-content;
+    display: flex;
+    position: absolute;
+    top: 40vw;
+    left: 11.5278vw;
+  }
+}
+@media screen and (min-width: 1400px){
+  .profile{
+    top: 536px;
+    left: 165px;
+  }
+}
+.name, .job{
+  
+  min-height: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto 0;
+}
+
+.name{
+  margin-top: 18px;
+  min-width: 110px;
+}
+
+.name__text, .job__text{
+  font-size: 0.96rem;
+}
+
+.name__text{
+  color: var(--dark-blue);
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px){
+  .name{
+    margin: 0;
+  }
+  .name__text{
+    text-align: left;
+  }
+}
+
+.job{
+  margin-top: 1px;
+  min-width: 250px;
+}
+
+.job__text{
+  color: var(--gray);
+  font-weight: 300;
+  margin-top: 0;
+}
+
+@media screen and (min-width: 768px){
+  .job{
+    margin: 0;
+  }
+  .job__text{
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .name{
+    min-width: 140px;
+  }
+  .job{
+    min-width: 300px;
+  }
+  .name, .job{
+    min-height: 1.6rem;
+  }
+  .name__text{
+    font-weight: 700;
+  }
+  .job__text{
+    margin-left: 6px;
+    font-weight: 500;
+  }
+  .job--next .job__text{
+    margin-left: 0;
+  }
+  .name__text, .job__text{
+    letter-spacing: -0.05rem;
+    word-spacing: 0.05rem;
+    font-size: 1.31rem;
+  }
+}
+
+.attribution{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-size: 9px;
+}
